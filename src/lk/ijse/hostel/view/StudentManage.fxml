@@ -1,8 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="832.0" prefWidth="942.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.StudentManageController">
-
+<AnchorPane prefHeight="832.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.StudentManageController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="316.0" text="STUDENT INFORMATION">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="328.0" />
+      <Label layoutX="29.0" layoutY="98.0" prefHeight="22.0" prefWidth="55.0" text="ST ID">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="29.0" layoutY="120.0" prefHeight="27.0" prefWidth="201.0" />
+      <Label layoutX="371.0" layoutY="96.0" prefHeight="22.0" prefWidth="120.0" text="ST NAME">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="371.0" layoutY="118.0" prefHeight="27.0" prefWidth="234.0" />
+      <Label layoutX="727.0" layoutY="95.0" prefHeight="22.0" prefWidth="84.0" text="ADDRESS">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="727.0" layoutY="117.0" prefHeight="27.0" prefWidth="201.0" />
+      <Label layoutX="29.0" layoutY="188.0" prefHeight="22.0" prefWidth="84.0" text="CONTACT">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="29.0" layoutY="210.0" prefHeight="27.0" prefWidth="201.0" />
+      <Label layoutX="371.0" layoutY="186.0" prefHeight="22.0" prefWidth="55.0" text="DOB">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="371.0" layoutY="210.0" prefHeight="27.0" prefWidth="234.0" />
+      <Label layoutX="727.0" layoutY="186.0" prefHeight="22.0" prefWidth="73.0" text="GENDER">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="725.0" layoutY="210.0" prefHeight="27.0" prefWidth="201.0" />
+      <JFXButton buttonType="RAISED" layoutX="561.0" layoutY="285.0" prefHeight="31.0" prefWidth="109.0" style="-fx-background-color: #f0932b;" text="SAVE" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="691.0" layoutY="285.0" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #192a56;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="811.0" layoutY="285.0" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #e84118;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <TableView layoutX="15.0" layoutY="379.0" prefHeight="445.0" prefWidth="909.0">
+        <columns>
+          <TableColumn prefWidth="124.0" text="ST ID" />
+          <TableColumn prefWidth="176.0" text="ST NAME" />
+            <TableColumn prefWidth="142.0" text="ADDRESS" />
+            <TableColumn prefWidth="152.0" text="CONTACT" />
+            <TableColumn prefWidth="182.0" text="DOB" />
+            <TableColumn prefWidth="132.0" text="GENDER" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

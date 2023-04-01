@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.hostel.controller.RoomManage"
-            prefHeight="832.0" prefWidth="942.0">
 
+<AnchorPane prefHeight="832.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.RoomManage">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="299.0" text="ROOM INFORMATION">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="17.0" layoutY="41.0" prefHeight="3.0" prefWidth="271.0" />
+   </children>
 </AnchorPane>
