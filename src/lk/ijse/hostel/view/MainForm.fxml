@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.MainFormController">
+   <children>
+      <ImageView fitHeight="834.0" fitWidth="339.0" layoutX="-2.0" layoutY="-3.0" pickOnBounds="true">
+         <image>
+            <Image url="@assets/Group%203.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="27.0" layoutY="458.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Settings" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font></Button>
+      <Button layoutX="24.0" layoutY="257.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Student Manage" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="24.0" layoutY="325.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Room Manage" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="26.0" layoutY="394.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Reservations" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="26.0" layoutY="193.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Dashboard" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
