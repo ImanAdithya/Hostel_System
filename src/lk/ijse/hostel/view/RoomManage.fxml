@@ -48,12 +48,12 @@
       <JFXButton buttonType="RAISED" layoutX="705.0" layoutY="265.0" prefHeight="27.0" prefWidth="90.0" style="-fx-background-color: #192a56;" text="UPDATE" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="820.0" layoutY="265.0" prefHeight="27.0" prefWidth="90.0" style="-fx-background-color: red;" text="DELETE" textFill="WHITE" />
       <TableView layoutX="144.0" layoutY="341.0" prefHeight="464.0" prefWidth="654.0">
-        <columns>
-          <TableColumn prefWidth="153.0" text="ROOM ID" />
-          <TableColumn prefWidth="195.0" text="ROOM TYPE" />
+         <columns>
+            <TableColumn prefWidth="153.0" text="ROOM ID" />
+            <TableColumn prefWidth="195.0" text="ROOM TYPE" />
             <TableColumn prefWidth="179.0" text="KEY MONEY" />
             <TableColumn prefWidth="125.0" text="QTY" />
-        </columns>
+         </columns>
       </TableView>
       <ImageView fitHeight="464.0" fitWidth="654.0" layoutX="144.0" layoutY="341.0" opacity="0.27" pickOnBounds="true">
          <image>

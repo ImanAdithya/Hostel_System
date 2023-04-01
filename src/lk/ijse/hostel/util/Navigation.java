@@ -22,19 +22,19 @@ public class Navigation {
                 break;
             case ROOM:
                 window.setTitle ("ROOM");
-                //iniUi("StudentManageForm.fxml");
+                iniUi("RoomManage.fxml");
                 break;
             case RESERVATION:
                 window.setTitle ("RESERVATION");
-                //iniUi("EmployeManageForm.fxml");
+                iniUi("ReservationManage.fxml");
                 break;
             case SETTING:
                 window.setTitle ("SETTING");
-                //iniUi("SalaryManageForm.fxml");
+                iniUi("Setting.fxml");
                 break;
             case DASHBOARD:
                 window.setTitle ("DASBOARD");
-                //iniUi("SalaryManageForm.fxml");
+                iniUi("DashboardForm.fxml");
                 break;
             default:
                 System.out.println ("Something Wrong");

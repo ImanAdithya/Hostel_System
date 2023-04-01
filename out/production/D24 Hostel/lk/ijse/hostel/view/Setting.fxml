@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.hostel.controller.Setting"
-            prefHeight="832.0" prefWidth="942.0">
 
+<AnchorPane prefHeight="832.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.Setting">
+   <children>
+      <Label layoutX="242.0" layoutY="311.0" prefHeight="17.0" prefWidth="463.0" text="db gdfnfndhdhm" />
+   </children>
 </AnchorPane>
