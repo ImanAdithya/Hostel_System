@@ -1,5 +1,6 @@
 package lk.ijse.hostel.dao.custom.impl;
 
+import javafx.collections.ObservableList;
 import lk.ijse.hostel.dao.custom.RoomDAO;
 import lk.ijse.hostel.entity.Room;
 import org.hibernate.Session;
@@ -25,12 +26,17 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public String update(Room room) {
-        return null;
+    public void update(Room room) {
+
     }
 
     @Override
-    public String delete(Room room) {
+    public void delete(Room room) {
+
+    }
+
+    @Override
+    public Room getObject(String id) throws Exception {
         return null;
     }
 }

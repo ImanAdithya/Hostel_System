@@ -1,10 +1,12 @@
 package lk.ijse.hostel.dao.custom.impl;
 
+import javafx.collections.ObservableList;
 import lk.ijse.hostel.dao.custom.ReservationDAO;
 import lk.ijse.hostel.entity.Reservation;
 import org.hibernate.Session;
 
 import java.util.List;
+import java.util.Observable;
 
 public class RevervationDAOImpl implements ReservationDAO {
 
@@ -25,12 +27,17 @@ public class RevervationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public String update(Reservation reservation) {
-        return null;
+    public void update(Reservation reservation) {
+
     }
 
     @Override
-    public String delete(Reservation reservation) {
+    public void delete(Reservation reservation) {
+
+    }
+
+    @Override
+    public Reservation getObject(String id) throws Exception {
         return null;
     }
 }

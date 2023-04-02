@@ -8,8 +8,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -72,20 +70,15 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <TableView layoutX="17.0" layoutY="361.0" prefHeight="433.0" prefWidth="909.0">
+      <TableView fx:id="tblStudent" layoutX="17.0" layoutY="361.0" onMouseClicked="#OnActionMouseClicked" prefHeight="433.0" prefWidth="909.0">
         <columns>
-          <TableColumn prefWidth="124.0" text="ST ID" />
-          <TableColumn prefWidth="176.0" text="ST NAME" />
-            <TableColumn prefWidth="142.0" text="ADDRESS" />
-            <TableColumn prefWidth="152.0" text="CONTACT" />
-            <TableColumn prefWidth="182.0" text="DOB" />
-            <TableColumn prefWidth="132.0" text="GENDER" />
+          <TableColumn fx:id="colstId" prefWidth="124.0" text="ST ID" />
+          <TableColumn fx:id="colStName" prefWidth="176.0" text="ST NAME" />
+            <TableColumn fx:id="colAddress" prefWidth="142.0" text="ADDRESS" />
+            <TableColumn fx:id="colContact" prefWidth="152.0" text="CONTACT" />
+            <TableColumn fx:id="colDob" prefWidth="182.0" text="DOB" />
+            <TableColumn fx:id="colGender" prefWidth="132.0" text="GENDER" />
         </columns>
       </TableView>
-      <ImageView fitHeight="400.0" fitWidth="877.0" layoutX="43.0" layoutY="394.0" opacity="0.25" pickOnBounds="true">
-         <image>
-            <Image url="@assets/st.jpg" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

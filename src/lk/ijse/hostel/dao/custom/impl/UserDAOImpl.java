@@ -1,5 +1,6 @@
 package lk.ijse.hostel.dao.custom.impl;
 
+import javafx.collections.ObservableList;
 import lk.ijse.hostel.dao.custom.UserDAO;
 import lk.ijse.hostel.entity.User;
 import org.hibernate.Session;
@@ -25,12 +26,17 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public String update(User user) {
-        return null;
+    public void update(User user) {
+
     }
 
     @Override
-    public String delete(User user) {
+    public void delete(User user) {
+
+    }
+
+    @Override
+    public User getObject(String id) throws Exception {
         return null;
     }
 }
