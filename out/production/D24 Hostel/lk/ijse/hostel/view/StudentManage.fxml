@@ -26,48 +26,48 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="29.0" layoutY="120.0" prefHeight="27.0" prefWidth="201.0" />
+      <TextField fx:id="txtstId" layoutX="29.0" layoutY="120.0" prefHeight="27.0" prefWidth="201.0" />
       <Label layoutX="371.0" layoutY="96.0" prefHeight="22.0" prefWidth="120.0" text="ST NAME">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="371.0" layoutY="118.0" prefHeight="27.0" prefWidth="234.0" />
+      <TextField fx:id="txtstName" layoutX="371.0" layoutY="118.0" prefHeight="27.0" prefWidth="234.0" />
       <Label layoutX="727.0" layoutY="95.0" prefHeight="22.0" prefWidth="84.0" text="ADDRESS">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="727.0" layoutY="117.0" prefHeight="27.0" prefWidth="201.0" />
+      <TextField fx:id="txtAdress" layoutX="727.0" layoutY="117.0" prefHeight="27.0" prefWidth="201.0" />
       <Label layoutX="29.0" layoutY="188.0" prefHeight="22.0" prefWidth="84.0" text="CONTACT">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="29.0" layoutY="210.0" prefHeight="27.0" prefWidth="201.0" />
+      <TextField fx:id="txtContact" layoutX="29.0" layoutY="210.0" prefHeight="27.0" prefWidth="201.0" />
       <Label layoutX="371.0" layoutY="186.0" prefHeight="22.0" prefWidth="55.0" text="DOB">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <DatePicker layoutX="371.0" layoutY="210.0" prefHeight="27.0" prefWidth="234.0" />
+      <DatePicker fx:id="txtDate" layoutX="371.0" layoutY="210.0" prefHeight="27.0" prefWidth="234.0" />
       <Label layoutX="727.0" layoutY="186.0" prefHeight="22.0" prefWidth="73.0" text="GENDER">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <ComboBox layoutX="725.0" layoutY="210.0" prefHeight="27.0" prefWidth="201.0" />
-      <JFXButton buttonType="RAISED" layoutX="561.0" layoutY="285.0" prefHeight="31.0" prefWidth="109.0" style="-fx-background-color: #f0932b;" text="SAVE" textFill="WHITE">
+      <ComboBox fx:id="cmbGender" layoutX="725.0" layoutY="210.0" prefHeight="27.0" prefWidth="201.0" />
+      <JFXButton buttonType="RAISED" layoutX="561.0" layoutY="285.0" onAction="#onActionSave" prefHeight="31.0" prefWidth="109.0" style="-fx-background-color: #f0932b;" text="SAVE" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="691.0" layoutY="285.0" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #192a56;" text="UPDATE" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="691.0" layoutY="285.0" onAction="#onActionUpdate" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #192a56;" text="UPDATE" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="811.0" layoutY="285.0" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #e84118;" text="DELETE" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="811.0" layoutY="285.0" onAction="#onActionDelete" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #e84118;" text="DELETE" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

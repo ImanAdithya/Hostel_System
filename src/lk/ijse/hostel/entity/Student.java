@@ -1,8 +1,17 @@
 package lk.ijse.hostel.entity;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "Student")
 public class Student {
+    @Id
+    @Column(name = "stID",length = 25)
     private String stId;
+    @Column(name = "stName")
     private String stName;
+    @Column(name = "address")
     private String address;
 
     public Student() {
@@ -19,8 +28,14 @@ public class Student {
         this.setGender (gender);
     }
 
+    @Column(name = "dob")
     private String dob;
+    @Column(name = "gender")
     private String gender;
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "student")
+    private List<Reservation> reservationList;
+
 
 
     public String getStId() {

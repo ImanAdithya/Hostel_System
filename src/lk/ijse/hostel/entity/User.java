@@ -1,7 +1,17 @@
 package lk.ijse.hostel.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user")
 public class User {
+    @Id
+    @Column(name = "userName",length = 25)
     private String userName;
+    @Column(name = "password")
     private String Password;
 
     public User() {
