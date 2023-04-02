@@ -22,7 +22,7 @@ public class BOFactory {
         STUDENT,ROOM,USER,RESERVATION
     }
 
-    public SuperBO getBO(BOTypes boTypes){
+    public static SuperBO getBO(BOTypes boTypes){
         switch (boTypes){
             case STUDENT:
                 return new StudentBOImpl ();
