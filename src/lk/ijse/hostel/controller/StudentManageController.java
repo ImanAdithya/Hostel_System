@@ -40,7 +40,7 @@ public class StudentManageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setGender ();
-        setTable ();
+        setTableStudent ();
         loadAllStudent ();
     }
 
@@ -52,7 +52,7 @@ public class StudentManageController implements Initializable {
         boolean isDeleted=studentBO.deleteStudent (studentDTO);
 
         if (isDeleted){
-            new Alert (Alert.AlertType.INFORMATION, "Student Update Succuss").show ();
+            new Alert (Alert.AlertType.INFORMATION, "Student Delete Succuss").show ();
             tblStudent.getItems ().clear ();
             clearData ();
             loadAllStudent ();
@@ -122,7 +122,7 @@ public class StudentManageController implements Initializable {
 
     }
 
-    public void setTable() {
+    public void setTableStudent() {
         colstId.setCellValueFactory (new PropertyValueFactory<> ("stId"));
         colStName.setCellValueFactory (new PropertyValueFactory<> ("stName"));
         colAddress.setCellValueFactory (new PropertyValueFactory<> ("address"));

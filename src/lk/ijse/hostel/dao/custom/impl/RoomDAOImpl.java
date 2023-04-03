@@ -3,7 +3,9 @@ package lk.ijse.hostel.dao.custom.impl;
 import javafx.collections.ObservableList;
 import lk.ijse.hostel.dao.custom.RoomDAO;
 import lk.ijse.hostel.entity.Room;
+import lk.ijse.hostel.entity.Student;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -17,26 +19,29 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public List<Room> loadAll() {
-        return null;
+        String sqlQuery="FROM Room ";
+        Query query = session.createQuery(sqlQuery);
+        List list =query.list ();
+        session.close();
+        return list;
     }
 
     @Override
     public String save(Room room) {
-        return null;
+       return (String) session.save (room);
     }
 
     @Override
     public void update(Room room) {
-
+        session.update (room);
     }
-
     @Override
     public void delete(Room room) {
-
+        session.delete (room);
     }
 
     @Override
     public Room getObject(String id) throws Exception {
-        return null;
+        return session.get(Room.class,id);
     }
 }
