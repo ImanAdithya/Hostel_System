@@ -6,16 +6,34 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="LoginPane" prefHeight="736.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.LoginFormController">
    <children>
       <ImageView fitHeight="736.0" fitWidth="1097.0" pickOnBounds="true">
          <image>
-            <Image url="@assets/D4%201.jpg" />
+            <Image url="@assets/D4 1.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="txtUName" layoutX="390.0" layoutY="324.0" prefHeight="39.0" prefWidth="317.0" style="-fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txtUName" layoutX="390.0" layoutY="324.0" prefHeight="39.0" prefWidth="317.0" style="-fx-border-radius: 10; -fx-background-radius: 10;">
+         <font>
+            <Font size="17.0" />
+         </font></TextField>
       <PasswordField fx:id="txtPass" layoutX="390.0" layoutY="402.0" prefHeight="39.0" prefWidth="317.0" style="-fx-background-radius: 10;" />
       <Button layoutX="635.0" layoutY="474.0" mnemonicParsing="false" onAction="#btnSign" opacity="0.0" prefHeight="27.0" prefWidth="72.0" text="Button" />
+      <ImageView fx:id="imgOpen" fitHeight="27.0" fitWidth="25.0" layoutX="671.0" layoutY="409.0" onMouseClicked="#OnClickEyeOpen" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/o1.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtPassShow" layoutX="390.0" layoutY="402.0" prefHeight="39.0" prefWidth="317.0" style="-fx-border-radius: 10; -fx-background-radius: 10;">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <ImageView fx:id="imgEyeClosed" fitHeight="25.0" fitWidth="34.0" layoutX="671.0" layoutY="409.0" onMouseClicked="#eyeClosedOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/o2.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

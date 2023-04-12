@@ -23,17 +23,17 @@ public class RevervationDAOImpl implements ReservationDAO {
 
     @Override
     public String save(Reservation reservation) {
-        return null;
+        return (String) session.save(reservation);
     }
 
     @Override
     public void update(Reservation reservation) {
-
+        session.update(reservation);
     }
 
     @Override
     public void delete(Reservation reservation) {
-
+        session.delete(reservation);
     }
 
     @Override

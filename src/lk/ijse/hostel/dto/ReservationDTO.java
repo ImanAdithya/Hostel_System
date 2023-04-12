@@ -1,23 +1,22 @@
 package lk.ijse.hostel.dto;
 
+import java.util.Date;
+
 public class ReservationDTO {
 
     private String resID;
 
-    private String date;
-
-    public ReservationDTO(String resID, String date, String stId, String roomId, String status) {
+    public ReservationDTO(String resID, Date date, StudentDTO studentDTO, RoomDTO roomDTO, String status) {
         this.resID = resID;
         this.date = date;
-        this.stId = stId;
-        this.roomId = roomId;
+        this.setStudentDTO (studentDTO);
+        this.setRoomDTO (roomDTO);
         this.status = status;
     }
 
-    private String stId;
-
-    private String roomId;
-
+    private Date date;
+    private StudentDTO studentDTO;
+    private RoomDTO roomDTO;
     private String status;
 
     public String getResID() {
@@ -28,29 +27,14 @@ public class ReservationDTO {
         this.resID = resID;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getStId() {
-        return stId;
-    }
-
-    public void setStId(String stId) {
-        this.stId = stId;
-    }
-
-    public String getRoomId() {
-        return roomId;
-    }
-
-    public void setRoomId(String roomId) {
-        this.roomId = roomId;
-    }
 
     public String getStatus() {
         return status;
@@ -58,5 +42,21 @@ public class ReservationDTO {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public StudentDTO getStudentDTO() {
+        return studentDTO;
+    }
+
+    public void setStudentDTO(StudentDTO studentDTO) {
+        this.studentDTO = studentDTO;
+    }
+
+    public RoomDTO getRoomDTO() {
+        return roomDTO;
+    }
+
+    public void setRoomDTO(RoomDTO roomDTO) {
+        this.roomDTO = roomDTO;
     }
 }

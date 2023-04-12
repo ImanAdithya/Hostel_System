@@ -13,26 +13,26 @@
             <Image url="@assets/Group%203.png" />
          </image>
       </ImageView>
-      <Button layoutX="27.0" layoutY="458.0" mnemonicParsing="false" onAction="#onActionSetting" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Settings" textFill="WHITE">
+      <Button fx:id="settingId" layoutX="27.0" layoutY="458.0" mnemonicParsing="false" onAction="#onActionSetting" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Settings" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font></Button>
-      <Button layoutX="24.0" layoutY="257.0" mnemonicParsing="false" onAction="#onActionStudent" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Student Manage" textFill="WHITE">
+      <Button fx:id="stManageId" layoutX="24.0" layoutY="257.0" mnemonicParsing="false" onAction="#onActionStudent" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Student Manage" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="24.0" layoutY="325.0" mnemonicParsing="false" onAction="#onActionRoom" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Room Manage" textFill="WHITE">
+      <Button fx:id="roomId" layoutX="24.0" layoutY="325.0" mnemonicParsing="false" onAction="#onActionRoom" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Room Manage" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="26.0" layoutY="394.0" mnemonicParsing="false" onAction="#onActionRervation" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Reservations" textFill="WHITE">
+      <Button fx:id="resId" layoutX="26.0" layoutY="394.0" mnemonicParsing="false" onAction="#onActionRervation" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Reservations" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="26.0" layoutY="193.0" mnemonicParsing="false" onAction="#onActionDashboard" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Dashboard" textFill="WHITE">
+      <Button fx:id="dashboardId" layoutX="26.0" layoutY="193.0" mnemonicParsing="false" onAction="#onActionDashboard" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Dashboard" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>

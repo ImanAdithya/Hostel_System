@@ -1,6 +1,7 @@
 package lk.ijse.hostel.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "reservation")
@@ -9,18 +10,20 @@ public class Reservation {
     @Column(name = "resId",length = 25)
     private String resId;
 
-    public Reservation() {
-    }
-    @Column(name = "date")
-    private String Date;
-
-    public Reservation(String resId, String date, Student student, Room room, String status) {
+    public Reservation(String resId, Date date, Student student, Room room, String status) {
         this.resId = resId;
-        Date = date;
+        this.setDate (date);
         this.student = student;
         this.room = room;
         this.status = status;
     }
+
+    public Reservation() {
+    }
+    @Column(name = "date")
+    private Date date;
+
+
     @ManyToOne
     @JoinColumn(name = "stID")
     private Student student;
@@ -40,13 +43,6 @@ public class Reservation {
         this.resId = resId;
     }
 
-    public String getDate() {
-        return Date;
-    }
-
-    public void setDate(String date) {
-        Date = date;
-    }
 
     public Student getStudent() {
         return student;
@@ -70,5 +66,13 @@ public class Reservation {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
