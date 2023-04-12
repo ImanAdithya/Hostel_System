@@ -99,8 +99,10 @@ public class ReservationManage implements Initializable {
                                     status
                             ));
                     if (isSaveReservation){
-                            roomDTO.setQty (roomDTO.getQty ()-1);
-                            resBO.updateRoom (roomDTO);
+                            RoomDTO room=getRoomDetail ();
+                            System.out.println (room.getQty ()-1);
+                            room.setQty (room.getQty ()-1);
+                            resBO.updateRoom (room);
                     }
 
             }catch (Exception e){
@@ -110,6 +112,26 @@ public class ReservationManage implements Initializable {
 
         @FXML
         void onActionUpdateRes(ActionEvent event) {
+                String stId=cmbStId.getValue ().toString ();
+                String roomID=cmbRoomId.getValue ().toString ();
+                String status=cmbStatus.getValue ().toString ();
+                String resId=txtResId.getText ();
+                StudentDTO studentDTO=getStudnetDetail ();
+                RoomDTO roomDTO=getRoomDetail ();
+                java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+                try{
+                    boolean isUpdate=resBO.updateReservation (
+                            new ReservationDTO (
+                                    resId,
+                                    sqlDate,
+                                    studentDTO,
+                                    roomDTO,
+                                    status
+                    ));
+                }catch (Exception e){
+                        e.printStackTrace ();
+                }
 
         }
 
