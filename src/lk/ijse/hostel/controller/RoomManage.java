@@ -48,11 +48,14 @@ public class RoomManage implements Initializable {
                     new Alert (Alert.AlertType.ERROR, "This ID Already Have").show ();
                     break;
                 } else {
-                    boolean isSaved = roomBO.saveRoom (roomDTO);
-                    new Alert (Alert.AlertType.CONFIRMATION, "ROOM ADDED SUCCUS").show ();
-                    tblRoom.getItems ().clear ();
-                    clearData ();
-                    loadAllRoom ();
+                    boolean isCheckValidate=checkValidation ();
+                    if(isCheckValidate) {
+                        roomBO.saveRoom (roomDTO);
+                        new Alert (Alert.AlertType.CONFIRMATION, "ROOM ADDED SUCCUS").show ();
+                        tblRoom.getItems ().clear ();
+                        clearData ();
+                        loadAllRoom ();
+                    }
                 }
             }
         }catch (Exception e){
@@ -148,5 +151,25 @@ public class RoomManage implements Initializable {
         } catch (Exception e) {
             System.out.println (e);
         }
+    }
+
+    private boolean checkValidation(){
+        String typeText = txtRoomType.getText();
+        String moneyText = txtKeymoney.getText();
+        String qtyText = txtQty.getText();
+
+
+        if (!moneyText.matches("^[0-9]+[.]?[0-9]*$")) {
+            new Alert(Alert.AlertType.ERROR, "invalid key money").show();
+            txtKeymoney.requestFocus();
+            return false;
+        } else if (!qtyText.matches("^\\d+$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid qty").show();
+            txtQty.requestFocus();
+            return false;
+        }else {
+            return true;
+        }
+
     }
 }

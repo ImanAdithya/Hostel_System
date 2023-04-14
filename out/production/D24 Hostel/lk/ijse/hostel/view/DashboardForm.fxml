@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.hostel.controller.DashboardForm"
-            prefHeight="832.0" prefWidth="942.0">
 
+<AnchorPane prefHeight="832.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.DashboardForm">
+   <children>
+      <ImageView fitHeight="832.0" fitWidth="950.0" layoutX="-3.0" pickOnBounds="true">
+         <image>
+            <Image url="@assets/dashboard.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="365.0" layoutY="652.0" prefHeight="17.0" prefWidth="91.0" text="23">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="497.0" layoutY="652.0" prefHeight="17.0" prefWidth="91.0" text="10">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

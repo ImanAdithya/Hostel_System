@@ -90,11 +90,15 @@ public class StudentManageController implements Initializable {
                 new Alert (Alert.AlertType.ERROR, "This ID Already Have").show ();
                 break;
             } else {
-                boolean isSaved = studentBO.saveStudent (studentDTO);
-                new Alert (Alert.AlertType.CONFIRMATION, "Student saved").show ();
-                tblStudent.getItems ().clear ();
-                clearData ();
-                loadAllStudent ();
+                boolean isCheckValidate=checkValidation ();
+                if(isCheckValidate){
+                    studentBO.saveStudent (studentDTO);
+                    new Alert (Alert.AlertType.CONFIRMATION, "Student saved").show ();
+                    tblStudent.getItems ().clear ();
+                    clearData ();
+                    loadAllStudent ();
+                }
+
             }
         }
     }
@@ -151,6 +155,25 @@ public class StudentManageController implements Initializable {
             System.out.println (e);
         }
     }
+    private boolean checkValidation(){
+        String nameText = txtstName.getText();
+        String addressText = txtAdress.getText();
+        String contactText = txtContact.getText();
+
+         if (!addressText.matches(".{2,}")) {
+            new Alert(Alert.AlertType.ERROR, "Address should be at least 3 characters long").show();
+            txtAdress.requestFocus();
+            return false;
+        } else if (!contactText.matches(".*(?:7|0|(?:\\\\\\\\+94))[0-9]{9,10}")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Contact").show();
+            txtContact.requestFocus();
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
 
 }
 

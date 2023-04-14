@@ -4,12 +4,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.hostel.bo.BOFactory;
 import lk.ijse.hostel.bo.custom.ReservationBO;
@@ -77,8 +73,44 @@ public class ReservationManage implements Initializable {
 
         private ReservationBO resBO = (ReservationBO) BOFactory.getBO (BOFactory.BOTypes.RESERVATION);
 
+        @Override
+        public void initialize(URL location, ResourceBundle resources) {
+                setIds ();
+                setData();
+                setStatus ();
+                setCellValueFactory ();
+               // loadTable ();
+
+        }
+
         @FXML
         void onActionDeleteRes(ActionEvent event) {
+                String stId=cmbStId.getValue ().toString ();
+                String roomID=cmbRoomId.getValue ().toString ();
+                String status=cmbStatus.getValue ().toString ();
+                String resId=txtResId.getText ();
+                StudentDTO studentDTO=getStudnetDetail ();
+                RoomDTO roomDTO=getRoomDetail ();
+                java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+                try{
+                        boolean isDelete=resBO.deleteReservation (
+                                new ReservationDTO (
+                                        resId,
+                                        sqlDate,
+                                        studentDTO,
+                                        roomDTO,
+                                        status
+                                ));
+                        if (isDelete){
+                                RoomDTO room=getRoomDetail ();
+                                room.setQty (room.getQty ()+1);
+                                resBO.updateRoom (room);
+
+                        }
+                }catch (Exception e){
+                        e.printStackTrace ();
+                }
         }
 
         @FXML
@@ -105,9 +137,42 @@ public class ReservationManage implements Initializable {
                             resBO.updateRoom (room);
                     }
 
+
             }catch (Exception e){
                     e.printStackTrace ();
             }
+
+               /* try {
+                        List<ReservationDTO> allRes = resBO.loadAll ();
+                        for (ReservationDTO s : allRes) {
+                                if (s.getResID ().equals (txtResId.getText ())) {
+                                        new Alert (Alert.AlertType.ERROR, "This ID Already Have").show ();
+                                        break;
+                                } else {
+                                        boolean isSaveReservation = resBO.saveReservation (
+                                                new ReservationDTO (
+                                                        resId,
+                                                        sqlDate,
+                                                        studentDTO,
+                                                        roomDTO,
+                                                        status
+                                                ));
+                                        if (isSaveReservation) {
+                                                RoomDTO room = getRoomDetail ();
+                                                System.out.println (room.getQty () - 1);
+                                                room.setQty (room.getQty () - 1);
+                                                resBO.updateRoom (room);
+                                        }
+
+
+                                        new Alert (Alert.AlertType.CONFIRMATION, "Reservation saved").show ();
+
+                                }
+                        }
+                }catch (Exception e){
+                        e.printStackTrace ();
+                }*/
+
         }
 
         @FXML
@@ -133,18 +198,6 @@ public class ReservationManage implements Initializable {
                         e.printStackTrace ();
                 }
 
-        }
-
-        @FXML
-        void onMouseClickReservation(MouseEvent event) {
-
-        }
-
-        @Override
-        public void initialize(URL location, ResourceBundle resources) {
-                setIds ();
-                setData();
-                setStatus ();
         }
 
         private void setData() {
@@ -187,6 +240,29 @@ public class ReservationManage implements Initializable {
             String roomId=cmbRoomId.getValue ().toString ();
              return resBO.getRoom (roomId);
         }
+
+        public void setCellValueFactory(){
+                colResId.setCellValueFactory (new PropertyValueFactory<> (""));
+                colStId.setCellValueFactory (new PropertyValueFactory<> (""));
+                colStName.setCellValueFactory (new PropertyValueFactory<> (""));
+                colRoomId.setCellValueFactory (new PropertyValueFactory<> (""));
+                colRoomType.setCellValueFactory (new PropertyValueFactory<> (""));
+                colStatus.setCellValueFactory (new PropertyValueFactory<> (""));
+
+        }
+        @FXML
+        void onMouseClickReservation(MouseEvent event) {
+
+        }
+
+        public void loadTable(){
+                List allRoom = resBO.loadAll ();
+
+                for (Object o : allRoom) {
+                        System.out.println (o);
+                }
+        }
+
 
 
 }

@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import lk.ijse.hostel.dao.custom.ReservationDAO;
 import lk.ijse.hostel.entity.Reservation;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import java.util.List;
 import java.util.Observable;
@@ -18,7 +19,11 @@ public class RevervationDAOImpl implements ReservationDAO {
 
     @Override
     public List<Reservation> loadAll() {
-        return null;
+        String sqlQuery="FROM Reservation";
+        Query query = session.createQuery(sqlQuery);
+        List list =query.list ();
+        session.close();
+        return list;
     }
 
     @Override

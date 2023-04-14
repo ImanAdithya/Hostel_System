@@ -15,6 +15,7 @@ import lk.ijse.hostel.util.SessionFactoryConfig;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RevervationBOImpl implements ReservationBO {
@@ -205,6 +206,75 @@ public class RevervationBOImpl implements ReservationBO {
 
     @Override
     public boolean deleteReservation(ReservationDTO dto) {
+        session=SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            reservationDAO.setSession(session);
+            reservationDAO.delete(
+                    new Reservation(
+                            dto.getResID(),
+                            dto.getDate(),
+                            new Student(
+                                    dto.getStudentDTO ().getStId (),
+                                    dto.getStudentDTO ().getStName (),
+                                    dto.getStudentDTO ().getAddress(),
+                                    dto.getStudentDTO ().getContact (),
+                                    dto.getStudentDTO ().getDob (),
+                                    dto.getStudentDTO ().getGender ()
+                            ),
+                            new Room(
+                                    dto.getRoomDTO ().getRoomID (),
+                                    dto.getRoomDTO ().getType (),
+                                    dto.getRoomDTO ().getKeyMoney (),
+                                    dto.getRoomDTO ().getQty ()
+                            ),
+                            dto.getStatus ()
+                    )
+            );
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e){
+            session.close();
+            transaction.rollback();
+        }
+
         return false;
+    }
+
+    @Override
+    public List<ReservationDTO> loadAll() {
+        session=SessionFactoryConfig.getInstance ().getSession ();
+        Transaction transaction=session.beginTransaction ();
+
+        roomDAO.setSession (session);
+        List<Reservation>list= reservationDAO. loadAll ();
+        List<ReservationDTO>resList= new ArrayList<> ();
+        System.out.println ("Check1");
+
+        for (Reservation res :list) {
+            resList.add(new ReservationDTO (
+                            res.getResId (),
+                            res.getDate (),
+                            new StudentDTO (
+                                    res.getStudent ().getStId (),
+                                    res.getStudent ().getStName (),
+                                    res.getStudent ().getAddress (),
+                                    res.getStudent ().getContact (),
+                                    res.getStudent ().getDob (),
+                                    res.getStudent ().getGender ()
+                                    ),
+                            new RoomDTO (
+                                    res.getRoom ().getRoomId (),
+                                    res.getRoom ().getType (),
+                                    res.getRoom ().getKeyMoney (),
+                                    res.getRoom ().getQty ()
+                            ),
+                            res.getStatus ()
+            ));
+        }
+
+        System.out.println ("Check2");
+        return resList;
     }
 }
