@@ -132,4 +132,9 @@ public class StudentBOImpl implements StudentBO {
                 st.getGender ()
                 );
     }
+
+    @Override
+    public int getStudnetCount() {
+        return 0;
+    }
 }

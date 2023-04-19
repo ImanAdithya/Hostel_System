@@ -8,36 +8,43 @@
 
 <AnchorPane prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.MainFormController">
    <children>
-      <ImageView fitHeight="834.0" fitWidth="339.0" layoutX="-2.0" layoutY="-3.0" pickOnBounds="true">
+      <ImageView fitHeight="837.0" fitWidth="339.0" layoutX="-2.0" layoutY="-3.0" pickOnBounds="true">
          <image>
             <Image url="@assets/Group%203.png" />
          </image>
       </ImageView>
-      <Button fx:id="settingId" layoutX="27.0" layoutY="458.0" mnemonicParsing="false" onAction="#onActionSetting" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Settings" textFill="WHITE">
+      <Button fx:id="settingId" layoutX="27.0" layoutY="458.0" mnemonicParsing="false" onAction="#onActionSetting" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #0c2461;" text="Settings" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font></Button>
-      <Button fx:id="stManageId" layoutX="24.0" layoutY="257.0" mnemonicParsing="false" onAction="#onActionStudent" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Student Manage" textFill="WHITE">
+      <Button fx:id="stManageId" layoutX="24.0" layoutY="257.0" mnemonicParsing="false" onAction="#onActionStudent" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #0c2461;" text="Student Manage" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button fx:id="roomId" layoutX="24.0" layoutY="325.0" mnemonicParsing="false" onAction="#onActionRoom" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Room Manage" textFill="WHITE">
+      <Button fx:id="roomId" layoutX="24.0" layoutY="325.0" mnemonicParsing="false" onAction="#onActionRoom" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #0c2461;" text="Room Manage" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button fx:id="resId" layoutX="26.0" layoutY="394.0" mnemonicParsing="false" onAction="#onActionRervation" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Reservations" textFill="WHITE">
+      <Button fx:id="resId" layoutX="26.0" layoutY="394.0" mnemonicParsing="false" onAction="#onActionRervation" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #0c2461;" text="Reservations" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button fx:id="dashboardId" layoutX="26.0" layoutY="193.0" mnemonicParsing="false" onAction="#onActionDashboard" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #1A5F7A;" text="Dashboard" textFill="WHITE">
+      <Button fx:id="dashboardId" layoutX="26.0" layoutY="193.0" mnemonicParsing="false" onAction="#onActionDashboard" prefHeight="44.0" prefWidth="284.0" style="-fx-background-color: #0c2461;" text="Dashboard" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <AnchorPane fx:id="contecxtPane" layoutX="338.0" prefHeight="834.0" prefWidth="945.0" />
+      <AnchorPane fx:id="contecxtPane" layoutX="338.0" prefHeight="834.0" prefWidth="945.0">
+         <children>
+            <ImageView fitHeight="837.0" fitWidth="954.0" layoutX="-2.0" pickOnBounds="true">
+               <image>
+                  <Image url="@assets/dashboard.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
       <Button layoutX="85.0" layoutY="777.0" mnemonicParsing="false" onAction="#onActionLogOut" opacity="0.0" prefHeight="36.0" prefWidth="131.0" text="Button" />
    </children>
 </AnchorPane>

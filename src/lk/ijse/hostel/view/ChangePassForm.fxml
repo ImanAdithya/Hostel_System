@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="559.0" prefWidth="399.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.ChangePassFormController">
+   <children>
+      <Label layoutX="79.0" layoutY="14.0" prefHeight="30.0" prefWidth="242.0" text="CHANGE PASSWORD">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Separator layoutX="119.0" layoutY="43.0" prefHeight="2.0" prefWidth="147.0" />
+      <Label layoutX="14.0" layoutY="93.0" prefHeight="20.0" prefWidth="73.0" text="USER ID :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUserId" layoutX="119.0" layoutY="90.0" prefHeight="27.0" prefWidth="257.0" />
+      <Label layoutX="14.0" layoutY="138.0" prefHeight="20.0" prefWidth="91.0" text="USER NAME:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUserName" layoutX="119.0" layoutY="135.0" prefHeight="27.0" prefWidth="257.0" />
+      <Label layoutX="14.0" layoutY="183.0" prefHeight="20.0" prefWidth="99.0" text="EMAIL :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmail" layoutX="119.0" layoutY="179.0" prefHeight="27.0" prefWidth="257.0" />
+      <TextField fx:id="txtPass" layoutX="119.0" layoutY="226.0" prefHeight="27.0" prefWidth="257.0" />
+      <Label layoutX="14.0" layoutY="230.0" prefHeight="20.0" prefWidth="99.0" text="PASSWORD :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="101.0" layoutY="474.0" onAction="#onActionChangePass" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: #eb2f06;" text="CHANGE PASSWORD" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="146.0" layoutY="272.0" onAction="#onActionSubmit" prefHeight="27.0" prefWidth="109.0" style="-fx-background-color: #45aaf2;" text="SUBMIT" textFill="WHITE" />
+      <Label layoutX="9.0" layoutY="350.0" prefHeight="20.0" prefWidth="109.0" text="VERIFY CODE :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtVerfyCode" layoutX="119.0" layoutY="347.0" prefHeight="27.0" prefWidth="257.0" />
+      <Label layoutX="14.0" layoutY="413.0" prefHeight="20.0" prefWidth="99.0" text="PASSWORD :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="393.0" prefHeight="20.0" prefWidth="73.0" text="NEW ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNewPass" layoutX="119.0" layoutY="400.0" prefHeight="27.0" prefWidth="257.0" />
+   </children>
+</AnchorPane>

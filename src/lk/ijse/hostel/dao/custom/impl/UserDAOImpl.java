@@ -2,8 +2,10 @@ package lk.ijse.hostel.dao.custom.impl;
 
 import javafx.collections.ObservableList;
 import lk.ijse.hostel.dao.custom.UserDAO;
+import lk.ijse.hostel.entity.Student;
 import lk.ijse.hostel.entity.User;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -17,17 +19,21 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<User> loadAll() {
-        return null;
+        String sqlQuery="FROM User ";
+        Query query = session.createQuery(sqlQuery);
+        List list =query.list ();
+        session.close();
+        return list;
     }
 
     @Override
     public String save(User user) {
-        return null;
+        return (String) session.save (user);
     }
 
     @Override
     public void update(User user) {
-
+        session.update (user);
     }
 
     @Override
@@ -37,6 +43,6 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User getObject(String id) throws Exception {
-        return null;
+        return session.get (User.class,id);
     }
 }

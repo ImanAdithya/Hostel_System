@@ -13,12 +13,14 @@ import lk.ijse.hostel.bo.custom.RoomBO;
 import lk.ijse.hostel.dto.ReservationDTO;
 import lk.ijse.hostel.dto.RoomDTO;
 import lk.ijse.hostel.dto.StudentDTO;
+import lk.ijse.hostel.util.SendMail;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class ReservationManage implements Initializable {
         public TextField txtStName;
@@ -132,6 +134,7 @@ public class ReservationManage implements Initializable {
                             ));
                     if (isSaveReservation){
                             RoomDTO room=getRoomDetail ();
+
                             System.out.println (room.getQty ()-1);
                             room.setQty (room.getQty ()-1);
                             resBO.updateRoom (room);
@@ -262,9 +265,6 @@ public class ReservationManage implements Initializable {
                         System.out.println (o);
                 }
         }
-
-
-
 }
 
 

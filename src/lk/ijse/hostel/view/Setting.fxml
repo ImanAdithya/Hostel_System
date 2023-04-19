@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="832.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.Setting">
    <children>
-      <Label layoutX="242.0" layoutY="311.0" prefHeight="17.0" prefWidth="463.0" text="db gdfnfndhdhm" />
+      <ImageView fitHeight="832.0" fitWidth="948.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@assets/user.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="15.0" onAction="#onActionAddUser" prefHeight="60.0" prefWidth="197.0" text="ADD USER" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="283.0" layoutY="15.0" onAction="#onActionManageUser" prefHeight="60.0" prefWidth="197.0" text="MANAGE USER" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
