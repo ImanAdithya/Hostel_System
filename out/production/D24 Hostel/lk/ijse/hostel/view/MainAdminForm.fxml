@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="contextMainAdmin" prefHeight="283.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.MainAdminFormController">
+   <children>
+      <Label layoutX="81.0" layoutY="20.0" prefHeight="36.0" prefWidth="331.0" text="ADMIN ATHUNCATION">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="128.0" layoutY="57.0" prefWidth="200.0" />
+      <Label layoutX="25.0" layoutY="108.0" text="USER NAME :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUserName" layoutX="128.0" layoutY="105.0" prefHeight="27.0" prefWidth="266.0" />
+      <Label layoutX="22.0" layoutY="155.0" text=" PASSWORD  :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="149.0" layoutY="214.0" onAction="#onActionSubmit" prefHeight="27.0" prefWidth="191.0" style="-fx-background-color: #00cec9;" text="SUBMIT" textFill="WHITE" />
+      <PasswordField fx:id="txtPassWord" layoutX="128.0" layoutY="152.0" prefHeight="27.0" prefWidth="266.0" />
+   </children>
+</AnchorPane>

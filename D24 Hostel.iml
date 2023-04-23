@@ -21,5 +21,6 @@
     <orderEntry type="library" name="required" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.30" level="project" />
     <orderEntry type="library" name="activation-1.1" level="project" />
+    <orderEntry type="library" name="Twilio" level="project" />
   </component>
 </module>

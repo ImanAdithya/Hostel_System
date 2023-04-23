@@ -13,12 +13,12 @@
             <Image url="@assets/user.jpg" />
          </image>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="15.0" onAction="#onActionAddUser" prefHeight="60.0" prefWidth="197.0" text="ADD USER" textFill="WHITE">
+      <JFXButton layoutX="283.0" layoutY="15.0" onAction="#onActionManageUser" prefHeight="60.0" prefWidth="197.0" text="MANAGE USER" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="283.0" layoutY="15.0" onAction="#onActionManageUser" prefHeight="60.0" prefWidth="197.0" text="MANAGE USER" textFill="WHITE">
+      <JFXButton layoutX="38.0" layoutY="15.0" onAction="#onActionManageUser" prefHeight="60.0" prefWidth="197.0" text="UPDATE USER" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>

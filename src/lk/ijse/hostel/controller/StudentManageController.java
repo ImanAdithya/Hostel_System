@@ -13,6 +13,7 @@ import lk.ijse.hostel.dto.StudentDTO;
 import lk.ijse.hostel.util.SessionFactoryConfig;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -42,6 +43,7 @@ public class StudentManageController implements Initializable {
         setGender ();
         setTableStudent ();
         loadAllStudent ();
+        setStID ();
     }
 
     public void onActionDelete(ActionEvent actionEvent) {
@@ -56,6 +58,7 @@ public class StudentManageController implements Initializable {
             tblStudent.getItems ().clear ();
             clearData ();
             loadAllStudent ();
+            setStID ();
         }else{
             new Alert (Alert.AlertType.ERROR, "Something went Wrong").show ();
         }
@@ -74,9 +77,21 @@ public class StudentManageController implements Initializable {
             tblStudent.getItems ().clear ();
             clearData ();
             loadAllStudent ();
+            setStID ();
         }else {
             new Alert (Alert.AlertType.ERROR, "Something went Wrong").show ();
         }
+    }
+
+    public boolean checkDuplicate() {
+        List<StudentDTO> allStudents = studentBO.loadAll ();
+        for (StudentDTO s : allStudents) {
+            if (s.getStId ().equals (txtstId.getText ())) {
+                new Alert (Alert.AlertType.ERROR, "This ID Already Have").show ();
+                return false;
+            }
+        }
+        return true;
     }
 
     public void onActionSave(ActionEvent actionEvent) {
@@ -84,12 +99,7 @@ public class StudentManageController implements Initializable {
         String gender = cmbGender.getValue ().toString ();
         StudentDTO studentDTO = new StudentDTO (txtstId.getText (), txtstName.getText (), txtAdress.getText (), txtContact.getText (), dob, gender);
 
-        List<StudentDTO> allStudents = studentBO.loadAll ();
-        for (StudentDTO s : allStudents) {
-            if (s.getStId ().equals (txtstId.getText ())) {
-                new Alert (Alert.AlertType.ERROR, "This ID Already Have").show ();
-                break;
-            } else {
+            if(checkDuplicate ()){
                 boolean isCheckValidate=checkValidation ();
                 if(isCheckValidate){
                     studentBO.saveStudent (studentDTO);
@@ -97,9 +107,9 @@ public class StudentManageController implements Initializable {
                     tblStudent.getItems ().clear ();
                     clearData ();
                     loadAllStudent ();
+                    setStID ();
                 }
 
-            }
         }
     }
 
@@ -164,7 +174,8 @@ public class StudentManageController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Address should be at least 3 characters long").show();
             txtAdress.requestFocus();
             return false;
-        } else if (!contactText.matches(".*(?:7|0|(?:\\\\\\\\+94))[0-9]{9,10}")) {
+        //} else if (!contactText.matches(".*(?:7|0|(?:\\\\\\\\+94))[0-9]{9,10}")) {
+         } else if (!contactText.matches("\\d{10}")) {
             new Alert(Alert.AlertType.ERROR, "Invalid Contact").show();
             txtContact.requestFocus();
             return false;
@@ -172,6 +183,40 @@ public class StudentManageController implements Initializable {
             return true;
         }
 
+    }
+    public String nextStID() {
+        Session session = SessionFactoryConfig.getInstance ().getSession ();
+        Transaction transaction = session.beginTransaction ();
+
+        Query query = session.createQuery ("select stId from Student order by stId desc");
+
+        String nextId = "S001";
+
+        if (query.list ().size () == 0) {
+            return nextId;
+        } else {
+            String id = (String) query.list ().get (0);
+
+            String[] SUs = id.split ("00");
+
+            for (String a : SUs) {
+                id = a;
+            }
+
+            int idNum = Integer.valueOf (id);
+
+            id = "S00" + (idNum + 1);
+
+            transaction.commit ();
+            session.close ();
+
+            return id;
+        }
+    }
+
+    public void setStID(){
+        String stID=nextStID ();
+        txtstId.setText (stID);
     }
 
 

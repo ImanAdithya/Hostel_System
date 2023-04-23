@@ -39,9 +39,9 @@
       </Button>
       <AnchorPane fx:id="contecxtPane" layoutX="338.0" prefHeight="834.0" prefWidth="945.0">
          <children>
-            <ImageView fitHeight="837.0" fitWidth="954.0" layoutX="-2.0" pickOnBounds="true">
+            <ImageView fitHeight="834.0" fitWidth="945.0" pickOnBounds="true">
                <image>
-                  <Image url="@assets/dashboard.jpg" />
+                  <Image url="@assets/D24.jpg" />
                </image>
             </ImageView>
          </children></AnchorPane>

@@ -83,13 +83,13 @@ public class RevervationBOImpl implements ReservationBO {
 
         roomDAO.setSession (session);
         try {
-            Room r = roomDAO.getObject (id);
+            Room room=roomDAO.getObject (id);
             session.close ();
             return new RoomDTO (
-                    r.getRoomId (),
-                    r.getType (),
-                    r.getKeyMoney (),
-                    r.getQty ()
+                    room.getRoomId (),
+                    room.getType (),
+                    room.getKeyMoney (),
+                    room.getQty ()
             );
 
         } catch (Exception e) {
@@ -98,6 +98,43 @@ public class RevervationBOImpl implements ReservationBO {
             return null;
         }
 
+    }
+
+    @Override
+    public ReservationDTO getRes(String resID) {
+        session=SessionFactoryConfig.getInstance ().getSession ();
+        Transaction transaction=session.beginTransaction ();
+
+        reservationDAO.setSession (session);
+        try {
+            Reservation res = reservationDAO.getObject (resID);
+            session.close ();
+            return new ReservationDTO (
+                    res.getResId (),
+                    res.getDate (),
+                    new StudentDTO (
+                            res.getStudent ().getStId (),
+                            res.getStudent ().getStName (),
+                            res.getStudent ().getAddress (),
+                            res.getStudent ().getContact (),
+                            res.getStudent ().getDob (),
+                            res.getStudent ().getGender ()
+                    ),
+                    new RoomDTO (
+                            res.getRoom ().getRoomId (),
+                            res.getRoom ().getType (),
+                            res.getRoom ().getKeyMoney (),
+                            res.getRoom ().getQty ()
+                    ),
+                    res.getStatus ()
+            );
+
+
+        } catch (Exception e) {
+            e.printStackTrace ();
+            transaction.rollback ();
+            return null;
+        }
     }
 
     @Override
@@ -247,7 +284,7 @@ public class RevervationBOImpl implements ReservationBO {
         session=SessionFactoryConfig.getInstance ().getSession ();
         Transaction transaction=session.beginTransaction ();
 
-        roomDAO.setSession (session);
+        reservationDAO.setSession (session);
         List<Reservation>list= reservationDAO. loadAll ();
         List<ReservationDTO>resList= new ArrayList<> ();
         System.out.println ("Check1");

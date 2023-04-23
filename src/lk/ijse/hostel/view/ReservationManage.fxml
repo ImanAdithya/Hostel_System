@@ -29,13 +29,13 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbRoomId" layoutX="26.0" layoutY="172.0" prefHeight="27.0" prefWidth="176.0" />
+      <ComboBox fx:id="cmbROOMId" layoutX="26.0" layoutY="172.0" prefHeight="27.0" prefWidth="176.0" />
       <Label layoutX="26.0" layoutY="253.0" text="ST ID">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbStId" layoutX="26.0" layoutY="282.0" prefHeight="27.0" prefWidth="176.0" />
+      <ComboBox fx:id="cmbSTId" layoutX="26.0" layoutY="282.0" prefHeight="27.0" prefWidth="176.0" />
       <Label layoutX="392.0" layoutY="142.0" text="ROOM-TYPE">
          <font>
             <Font size="17.0" />

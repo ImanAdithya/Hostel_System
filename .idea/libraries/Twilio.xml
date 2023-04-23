@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Twilio">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/lk/ijse/hostel/lib/Twilio" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/lk/ijse/hostel/lib/Twilio" recursive="false" />
+  </library>
+</component>

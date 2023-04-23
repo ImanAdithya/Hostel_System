@@ -5,12 +5,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="832.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.DashboardForm">
    <children>
       <ImageView fitHeight="832.0" fitWidth="950.0" layoutX="-3.0" pickOnBounds="true">
          <image>
-            <Image url="@assets/dashboard.jpg" />
+            <Image url="@assets/D24.jpg" />
          </image>
       </ImageView>
       <Label fx:id="lblStudent" layoutX="365.0" layoutY="652.0" prefHeight="17.0" prefWidth="91.0" text="23">
@@ -23,5 +24,50 @@
             <Font size="50.0" />
          </font>
       </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/Rectangle%2025.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="371.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/Rectangle%2025.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="592.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/Rectangle%2025.png" />
+         </image>
+      </ImageView>
+      <Text fill="#002b5b" layoutX="207.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Students">
+         <font>
+            <Font name="Helvetica Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#002b5b" layoutX="440.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rooms">
+         <font>
+            <Font name="Helvetica Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#002b5b" layoutX="629.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservations">
+         <font>
+            <Font name="Helvetica Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtStudents" fill="#002b5b" layoutX="227.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+         <font>
+            <Font name="Helvetica Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtRooms" fill="#002b5b" layoutX="452.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+         <font>
+            <Font name="Helvetica Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtReservation" fill="#002b5b" layoutX="673.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+         <font>
+            <Font name="Helvetica Bold" size="40.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

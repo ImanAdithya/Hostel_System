@@ -59,4 +59,15 @@ public class ReservationDTO {
     public void setRoomDTO(RoomDTO roomDTO) {
         this.roomDTO = roomDTO;
     }
+
+    @Override
+    public String toString() {
+        return "ReservationDTO{" +
+                "resID='" + resID + '\'' +
+                ", date=" + date +
+                ", studentDTO=" + studentDTO +
+                ", roomDTO=" + roomDTO +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

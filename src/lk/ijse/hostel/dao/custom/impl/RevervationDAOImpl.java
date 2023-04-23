@@ -3,6 +3,7 @@ package lk.ijse.hostel.dao.custom.impl;
 import javafx.collections.ObservableList;
 import lk.ijse.hostel.dao.custom.ReservationDAO;
 import lk.ijse.hostel.entity.Reservation;
+import lk.ijse.hostel.entity.Room;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -43,6 +44,6 @@ public class RevervationDAOImpl implements ReservationDAO {
 
     @Override
     public Reservation getObject(String id) throws Exception {
-        return null;
+        return session.get(Reservation.class,id);
     }
 }
